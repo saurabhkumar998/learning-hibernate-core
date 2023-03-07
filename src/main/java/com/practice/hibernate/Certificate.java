@@ -5,7 +5,6 @@ import jakarta.persistence.Transient;
 
 @Embeddable                 // it tells hibernate that this class is embeddable to other classes(if used in them)
 public class Certificate {
-
     private String course;
     private String duration;
 
