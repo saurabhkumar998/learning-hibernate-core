@@ -14,8 +14,17 @@ public class TableMappingDemo {
 
         // creating question
 
-        Answer answer = new Answer(201, "Java is a programming language");
-        Question question = new Question(101, "What is Java?", answer);
+
+        Question question = new Question();
+        question.setQuestionId(101);
+        question.setQuestion("What is Java?");
+
+        Answer answer = new Answer();
+        answer.setAnswerId(201);
+        answer.setAnswer("Java is a programming language");
+        question.setAnswer(answer);
+        answer.setQuestion(question);
+
 
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();

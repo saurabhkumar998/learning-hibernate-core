@@ -13,12 +13,16 @@ public class Answer {
     private int answerId;
     private String answer;
 
+    @OneToOne
+    private Question question;
+
     public Answer() {
     }
 
-    public Answer(int answerId, String answer) {
+    public Answer(int answerId, String answer, Question question) {
         this.answerId = answerId;
         this.answer = answer;
+        this.question = question;
     }
 
     public int getAnswerId() {
@@ -35,6 +39,13 @@ public class Answer {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+    public Question getQuestion() {
+        return this.question;
     }
 
     @Override
