@@ -9,6 +9,7 @@ public class Student {
     private int id;
     private String name;
     private String city;
+    private Certificate certificate;
 
     public Student() {
     }
@@ -17,6 +18,13 @@ public class Student {
         this.id = id;
         this.name = name;
         this.city = city;
+    }
+
+    public Student(int id, String name, String city, Certificate certificate) {
+        this.id = id;
+        this.name = name;
+        this.city = city;
+        this.certificate = certificate;
     }
 
     public int getId() {
