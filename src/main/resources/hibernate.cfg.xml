@@ -17,6 +17,8 @@
 
         <mapping class="com.practice.hibernate.Student"/>
         <mapping class="com.practice.hibernate.Address"/>
+        <mapping class="com.practice.hibernate.tablemapping.Question"/>
+        <mapping class="com.practice.hibernate.tablemapping.Answer"/>
 
     </session-factory>
 </hibernate-configuration>
