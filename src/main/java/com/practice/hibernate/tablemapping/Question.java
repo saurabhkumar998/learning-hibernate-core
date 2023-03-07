@@ -1,9 +1,8 @@
 package com.practice.hibernate.tablemapping;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Question {
@@ -11,16 +10,16 @@ public class Question {
     @Column(name = "question_id")
     private int questionId;
     private String question;
-    @OneToOne
-    private Answer answer;
+    @OneToMany(mappedBy = "question")
+    private List<Answer> answers;
 
     public Question() {
     }
 
-    public Question(int questionId, String question, Answer answer) {
+    public Question(int questionId, String question, List<Answer> answer) {
         this.questionId = questionId;
         this.question = question;
-        this.answer = answer;
+        this.answers = answer;
     }
 
     public int getQuestionId() {
@@ -39,12 +38,12 @@ public class Question {
         this.question = question;
     }
 
-    public Answer getAnswer() {
-        return answer;
+    public List<Answer> getAnswers() {
+        return answers;
     }
 
-    public void setAnswer(Answer answer) {
-        this.answer = answer;
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
     }
 
     @Override
@@ -52,7 +51,7 @@ public class Question {
         return "Question{" +
                 "questionId=" + questionId +
                 ", question='" + question + '\'' +
-                ", answer=" + answer +
+                ", answer=" + answers +
                 '}';
     }
 }
