@@ -1,4 +1,4 @@
-package com.practice.hibernate.tablemapping;
+package com.practice.hibernate.onetomanymapping;
 
 import jakarta.persistence.*;
 

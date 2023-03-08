@@ -1,8 +1,8 @@
-package com.practice.hibernate.tablemapping;
+package com.practice.hibernate.onetoonemapping;
 
 import jakarta.persistence.*;
 
-@Entity
+@Entity(name = "answer_table")
 public class Answer {
 
     @Id
@@ -10,9 +10,10 @@ public class Answer {
     private int answerId;
     private String answer;
 
-    @ManyToOne
-    private Question question;
 
+//    @OneToOne
+    @OneToOne(mappedBy = "answer")
+    private Question question;
     public Answer() {
     }
 
@@ -38,18 +39,11 @@ public class Answer {
         this.answer = answer;
     }
 
-    public void setQuestion(Question question) {
-        this.question = question;
-    }
     public Question getQuestion() {
-        return this.question;
+        return question;
     }
 
-    @Override
-    public String toString() {
-        return "Answer{" +
-                "answerId=" + answerId +
-                ", answer='" + answer + '\'' +
-                '}';
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 }
