@@ -19,10 +19,10 @@
 <!--        <mapping class="com.practice.hibernate.Address"/>-->
 <!--        <mapping class="com.practice.hibernate.onetomanymapping.Question"/>-->
 <!--        <mapping class="com.practice.hibernate.onetomanymapping.Answer"/>-->
-        <mapping class="com.practice.hibernate.onetoonemapping.Question"/>
-        <mapping class="com.practice.hibernate.onetoonemapping.Answer"/>
-<!--        <mapping class="com.practice.hibernate.manytomanymapping.Employee"/>-->
-<!--        <mapping class="com.practice.hibernate.manytomanymapping.Project"/>-->
+<!--        <mapping class="com.practice.hibernate.onetoonemapping.Question"/>-->
+<!--        <mapping class="com.practice.hibernate.onetoonemapping.Answer"/>-->
+        <mapping class="com.practice.hibernate.manytomanymapping.Employee"/>
+        <mapping class="com.practice.hibernate.manytomanymapping.Project"/>
 
 
     </session-factory>

@@ -13,7 +13,7 @@ public class Project {
     private int projectId;
     @Column(name="project_name")
     private String projectName;
-    @ManyToMany(mappedBy = "projects")
+    @ManyToMany
     private List<Employee> employees;
 
     public Project() {

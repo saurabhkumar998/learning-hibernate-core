@@ -39,7 +39,9 @@ public class ManyToManyMappingDemo {
         List<Project> projectList = List.of(project1, project2);
 
         employee1.setProjects(projectList);
+        employee2.setProjects(projectList);
 
+        project1.setEmployees(employeeList);
         project2.setEmployees(employeeList);
 
         Session session = factory.openSession();

@@ -10,7 +10,8 @@ public class Question {
     @Column(name = "question_id")
     private int questionId;
     private String question;
-    @OneToMany(mappedBy = "question")
+//    @OneToMany
+    @OneToMany(mappedBy = "question")    // if we use the mappedBy property then it will not create a mapping table in turn  it will rely on the mapped column
     private List<Answer> answers;
 
     public Question() {
