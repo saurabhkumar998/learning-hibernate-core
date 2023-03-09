@@ -10,7 +10,10 @@ public class Employee {
     @Column(name = "employee_name")
     private String employeeName;
     @ManyToMany
-    @JoinTable(name = "employee_project_join_table")
+    @JoinTable(name = "employee_project_join_table",
+            joinColumns = {@JoinColumn(name = "employee_id")},
+            inverseJoinColumns = {@JoinColumn(name = "project_id")}
+    )
     private List<Project> projects;
 
     public Employee() {

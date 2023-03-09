@@ -38,15 +38,15 @@ public class TableMappingDemo {
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
 
-//        session.save(question);
-//        session.save(answer1);
-//        session.save(answer2);
+        session.save(question);
+        session.save(answer1);
+        session.save(answer2);
 
-        Question fetchedQuestion = session.get(Question.class, 101);
-        System.out.println(fetchedQuestion.getQuestion());
-        for(Answer a : fetchedQuestion.getAnswers()) {
-            System.out.println(a.getAnswer());
-        }
+//        Question fetchedQuestion = session.get(Question.class, 101);
+//        System.out.println(fetchedQuestion.getQuestion());
+//        for(Answer a : fetchedQuestion.getAnswers()) {
+//            System.out.println(a.getAnswer());
+//        }
 
         transaction.commit();
         session.close();
