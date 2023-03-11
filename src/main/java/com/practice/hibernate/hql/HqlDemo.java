@@ -108,6 +108,21 @@ public class HqlDemo {
             System.out.println(Arrays.toString(o));
         }
 
+        // Pagination
+
+        Query paginationQuery = session.createQuery("from Student");
+
+        // this method sets the row number from where it will start fetching the data
+        paginationQuery.setFirstResult(0);
+        // this row sets the maximum result count
+        paginationQuery.setMaxResults(15);
+
+        List studentList = paginationQuery.list();
+
+        for(var st : studentList) {
+            System.out.println(st);
+        }
+
         transaction.commit();
         session.close();
     }
