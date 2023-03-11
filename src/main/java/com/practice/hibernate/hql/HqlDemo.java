@@ -117,11 +117,11 @@ public class HqlDemo {
         // this row sets the maximum result count
         paginationQuery.setMaxResults(15);
 
-        List studentList = paginationQuery.list();
-
-        for(var st : studentList) {
-            System.out.println(st);
-        }
+//        List studentList = paginationQuery.list();
+//
+//        for(var st : studentList) {
+//            System.out.println(st);
+//        }
 
         transaction.commit();
         session.close();

@@ -1,11 +1,9 @@
-package com.practice.hibernate.nativeSQLQuery;
+package com.practice.hibernate.nativesqlquery;
 
-import com.practice.hibernate.Student;
 import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.NativeQuery;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class NativeQueryDemo {
