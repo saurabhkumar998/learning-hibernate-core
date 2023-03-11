@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class HqlDemo {
@@ -61,14 +62,53 @@ public class HqlDemo {
         String query4 = "from Student as s where s.city=:enteredCity and s.name=:enteredName";
 
         Query builtQuery4 = session.createQuery(query4);
-        builtQuery4.setParameter("enteredCity", "Mumbai");
-        builtQuery4.setParameter("enteredName", "Cheteshwar Pujara");
+        builtQuery4.setParameter("enteredCity", "Punjab");
+        builtQuery4.setParameter("enteredName", "Jasprit Bumrah");
 
         Student pujji = (Student) builtQuery4.getSingleResult();
 
         System.out.println("Printing results of query4 : ");
         System.out.println(pujji);
 
+
+        Transaction transaction = session.beginTransaction();
+/*
+        // Deleting records from the db
+        System.out.println("Executing Delete Queries : ");
+
+        Query deleteQuery = session.createQuery("delete from Student where city=:enteredCity");
+
+        deleteQuery.setParameter("enteredCity", "Mumbai");
+
+        int n = deleteQuery.executeUpdate();
+        System.out.println(n + " rows deleted.");
+*/
+
+/*
+        // Updating records in the db
+        System.out.println("Executing update query :");
+        Query updateQuery = session.createQuery("update Student set city=:enteredCity where name=:enteredName");
+        updateQuery.setParameter("enteredCity", "Melbourne");
+        updateQuery.setParameter("enteredName", "Virat Kohli");
+
+        int m = updateQuery.executeUpdate();
+
+        System.out.println(m + " records updated.");
+*/
+
+        // Executing joins
+        System.out.println("Executing Joins : ");
+
+        Query joinQuery = session.createQuery("Select q.questionId, q.question, a.answerId, a.answer "
+        + "from Question q INNER JOIN q.answers a");
+
+        List<Object[]> joinResult = joinQuery.getResultList();
+
+        for (Object[] o : joinResult) {
+            System.out.println(Arrays.toString(o));
+        }
+
+        transaction.commit();
         session.close();
     }
 }
