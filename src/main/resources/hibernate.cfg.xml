@@ -5,12 +5,16 @@
 
 <hibernate-configuration>
     <session-factory>
+        <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/myhibernatedb</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
+        <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- update the existing database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
+        <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
