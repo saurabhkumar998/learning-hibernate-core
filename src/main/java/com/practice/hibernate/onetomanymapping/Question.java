@@ -11,7 +11,7 @@ public class Question {
     private int questionId;
     private String question;
 //    @OneToMany
-    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)    // if we use the mappedBy property then it will not create a mapping table in turn  it will rely on the mapped column
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER, cascade = CascadeType.ALL)    // if we use the mappedBy property then it will not create a mapping table in turn  it will rely on the mapped column
     private List<Answer> answers;
 
     public Question() {
