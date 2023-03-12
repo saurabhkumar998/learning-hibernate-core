@@ -1,6 +1,6 @@
 package com.practice.hibernate.manytomanymapping;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.util.List;
 @Entity

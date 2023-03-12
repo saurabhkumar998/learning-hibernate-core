@@ -1,6 +1,6 @@
 package com.practice.hibernate.onetomanymapping;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 public class Answer {

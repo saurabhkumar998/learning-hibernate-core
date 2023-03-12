@@ -5,22 +5,33 @@
 
 <hibernate-configuration>
     <session-factory>
+        <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/myhibernatedb</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
+        <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- update the existing database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
+        <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
         <property name="jdbc.complaint.truncate">false</property>
 <!--        <property name="hibernate.current_session_context_class">thread</property>-->
 
+<!--        enabling second level cache-->
+        <property name="cache.use_second_level_cache">true</property>
+<!--        <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>-->
+
+        <!--        <property name="cache.shared_cache_mode">ENABLE_SELECTIVE</property>-->
+        <property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+
         <mapping class="com.practice.hibernate.Student"/>
         <mapping class="com.practice.hibernate.Address"/>
-        <mapping class="com.practice.hibernate.onetomanymapping.Question"/>
-        <mapping class="com.practice.hibernate.onetomanymapping.Answer"/>
+<!--        <mapping class="com.practice.hibernate.onetomanymapping.Question"/>-->
+<!--        <mapping class="com.practice.hibernate.onetomanymapping.Answer"/>-->
 <!--        <mapping class="com.practice.hibernate.onetoonemapping.Question"/>-->
 <!--        <mapping class="com.practice.hibernate.onetoonemapping.Answer"/>-->
 <!--        <mapping class="com.practice.hibernate.manytomanymapping.Employee"/>-->
