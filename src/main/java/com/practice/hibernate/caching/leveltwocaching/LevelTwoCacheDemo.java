@@ -20,7 +20,7 @@ public class LevelTwoCacheDemo {
 
         // second session
         Session session2 = factory.openSession();
-
+        // we are calling the get method outside the previous session but it is still accessing the data from the cache because we have used level two cache
         Student student2 = session2.get(Student.class, 1987);
         System.out.println(student2);
 
