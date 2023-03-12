@@ -1,9 +1,14 @@
 package com.practice.hibernate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Cacheable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity
+@Cacheable     //  enabled level two caching for this entity
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Student {
     @Id
     private int id;

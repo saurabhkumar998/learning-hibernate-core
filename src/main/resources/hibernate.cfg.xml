@@ -21,10 +21,17 @@
         <property name="jdbc.complaint.truncate">false</property>
 <!--        <property name="hibernate.current_session_context_class">thread</property>-->
 
+<!--        enabling second level cache-->
+        <property name="cache.use_second_level_cache">true</property>
+<!--        <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>-->
+
+        <!--        <property name="cache.shared_cache_mode">ENABLE_SELECTIVE</property>-->
+        <property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+
         <mapping class="com.practice.hibernate.Student"/>
         <mapping class="com.practice.hibernate.Address"/>
-        <mapping class="com.practice.hibernate.onetomanymapping.Question"/>
-        <mapping class="com.practice.hibernate.onetomanymapping.Answer"/>
+<!--        <mapping class="com.practice.hibernate.onetomanymapping.Question"/>-->
+<!--        <mapping class="com.practice.hibernate.onetomanymapping.Answer"/>-->
 <!--        <mapping class="com.practice.hibernate.onetoonemapping.Question"/>-->
 <!--        <mapping class="com.practice.hibernate.onetoonemapping.Answer"/>-->
 <!--        <mapping class="com.practice.hibernate.manytomanymapping.Employee"/>-->

@@ -1,7 +1,7 @@
 package com.practice.hibernate;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Transient;
+import javax.persistence.Embeddable;
+import javax.persistence.Transient;
 
 @Embeddable                 // it tells hibernate that this class is embeddable to other classes(if used in them)
 public class Certificate {

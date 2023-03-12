@@ -1,6 +1,6 @@
 package com.practice.hibernate.onetoonemapping;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity(name = "answer_table")
 public class Answer {
